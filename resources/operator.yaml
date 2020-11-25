@@ -35,14 +35,14 @@ spec:
           - /tmp/ansible-operator/runner
           - stdout
           image: quay.io/multi-arch/benchmark-operator:latest
-          imagePullPolicy: "Always"
+          imagePullPolicy: "IfNotPresent"
           volumeMounts:
           - mountPath: /tmp/ansible-operator/runner
             name: runner
             readOnly: true
         - name: benchmark-operator
           image: quay.io/multi-arch/benchmark-operator:latest
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           env:
             - name: WATCH_NAMESPACE
               valueFrom:
